@@ -103,6 +103,8 @@ int main () {
     int indx;               //  These are for the last for loop
     int st;                 //
     int spa;                //
+    int new=big+1;          //  We need this for both loops, it will make space so * stars wont reach right next to its value in the chart, this will also keep
+                            //  the chart in shape 
         
         for(n=0;n<10;n++) {
 
@@ -113,7 +115,7 @@ int main () {
                 printf("*");                        //Here we have a for loop, which draws the chart of array elements and their values until the 10th element
             }
 
-            for (space=array[n]+1;space<MAX;space++) {
+            for (space=array[n]+1;space<new;space++) {
                 printf(" "); 
             }
 
@@ -129,12 +131,17 @@ int main () {
                 printf("*");                       //And here we finally loop the last 10 elements of the array, because number 10 takes one more space than numbers 1-9,
             }                                      //we made a different loop so the chart stays in shape
 
-            for (spa=array[indx]+1;spa<MAX;spa++) {
+            for (spa=array[indx]+1;spa<new;spa++) {
                 printf(" "); 
             }
 
             printf("( %d)\n",array[indx]);
     }
+
+char any;
+
+printf("\nInput any key to exit...");
+scanf("%s",any);
 
 return 0;
 
